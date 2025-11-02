@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FilterBar({ filter, setFilter, stats, onClearCompleted }) {
+function FilterBar({ filter, setFilter, stats, onClearCompleted, onExport }) {
   return (
     <div className="filter-bar">
       <div className="filters">
@@ -26,6 +26,9 @@ function FilterBar({ filter, setFilter, stats, onClearCompleted }) {
       <div className="actions">
         <button onClick={onClearCompleted} disabled={stats.completed === 0}>
           Clear Completed
+        </button>
+        <button onClick={onExport} disabled={stats.total === 0} title="Download todos as CSV">
+          Export CSV
         </button>
       </div>
     </div>
